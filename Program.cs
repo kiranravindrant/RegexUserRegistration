@@ -7,7 +7,7 @@ namespace RegexUserRegistration
     class Program
     {
         public static string namePattern = "^[A-Z]{1}[a-z]{2,}";
-        public static string emailPattern = "^[A-z a-z]{3,}[.]?([a-z A-z 0-9]{3,})?[@][a-z A-z]{2,}[.]?[a-z]{2,}[.]?[a-z]{2,3}$";
+        public static string emailPattern = "^[A-z a-z  ]{3,}[-+0-9 ]?[.]?([a-z A-z 0-9]{3,})?[@][a-z A-z 0-9]{1,}[.]?[a-z]{2,}[.]?[a-z]{2,3}$";
         public static string mobileNumPattern = "^[9][1][ ][0-9]{10}$";
         public static string passPattern = "^((?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*-_.])(?=.{8,}))";                                
         static void Main(string[] args)
@@ -33,6 +33,30 @@ namespace RegexUserRegistration
             Console.WriteLine("Enter a Password");
             string pass = Console.ReadLine();
             Console.WriteLine(PassValidation(pass));
+
+
+            string[] testSampleMails = {"abc@yahoo.com", "abc-100@yahoo.com","abc.100@yahoo.com", "abc-100@abc.net","abc-100@abc.net",
+                 "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com" };
+
+            foreach (string item in testSampleMails)
+            {
+                Console.WriteLine($" {item} {EmailValidation(item)}");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
         static bool NameValidation(string name)
         {
@@ -53,6 +77,11 @@ namespace RegexUserRegistration
         {   
             return Regex.IsMatch(pass, passPattern);
         }
+
+
+
+
+
 
 
     }
