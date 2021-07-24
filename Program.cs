@@ -15,8 +15,9 @@ namespace RegexUserRegistration
 
             Console.WriteLine(NameValidation(firstname));
 
-
-
+            Console.WriteLine("Enter your LastName");
+            string lastname = Console.ReadLine();
+            Console.WriteLine(NameValidation(lastname));
 
 
 
