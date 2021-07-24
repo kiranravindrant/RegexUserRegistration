@@ -9,7 +9,7 @@ namespace RegexUserRegistration
         public static string namePattern = "^[A-Z]{1}[a-z]{2,}";
         public static string emailPattern = "^[A-z a-z]{3,}[.]?([a-z A-z 0-9]{3,})?[@][a-z A-z]{2,}[.]?[a-z]{2,}[.]?[a-z]{2,3}$";
         public static string mobileNumPattern = "^[9][1][ ][0-9]{10}$";
-        public static string passPattern = "^((?=.*[A - Z])(?=.*[0 - 9])(?=.{8,}))";                                
+        public static string passPattern = "^((?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*-_.])(?=.{8,}))";                                
         static void Main(string[] args)
         {
             Console.WriteLine("=======User Registration=====");
